@@ -1,0 +1,405 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/WordCards.tsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=7b5c650e"; const Fragment = __vite__cjsImport0_react_jsxDevRuntime["Fragment"]; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("E:/vibecoding/词雾/src/components/WordCards.tsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/node_modules/.vite/deps/react.js?v=7b5c650e"; const useState = __vite__cjsImport3_react["useState"];
+import { Check, ChevronDown, Feather, Heart, Shuffle } from "/node_modules/.vite/deps/lucide-react.js?v=7b5c650e";
+function FilterPicker({ label, value, categories, onChange }) {
+  _s();
+  const [open, setOpen] = useState(false);
+  const select = (c) => {
+    onChange(c);
+    setOpen(false);
+  };
+  return /* @__PURE__ */ jsxDEV("div", { className: "relative", children: [
+    /* @__PURE__ */ jsxDEV(
+      "button",
+      {
+        "data-testid": `filter-${label}`,
+        onClick: () => setOpen((v) => !v),
+        className: "inline-flex items-center gap-1 rounded-full border border-line/80 bg-white/50 px-3 py-1 text-xs text-muted transition-colors hover:border-accent/40 hover:text-accent",
+        title: "选择抽取分类",
+        children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "tracking-[0.2em]", children: value ?? "全部" }, void 0, false, {
+            fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+            lineNumber: 53,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ jsxDEV(ChevronDown, { size: 11 }, void 0, false, {
+            fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+            lineNumber: 54,
+            columnNumber: 9
+          }, this)
+        ]
+      },
+      void 0,
+      true,
+      {
+        fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+        lineNumber: 47,
+        columnNumber: 7
+      },
+      this
+    ),
+    open && /* @__PURE__ */ jsxDEV(Fragment, { children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "fixed inset-0 z-10", onClick: () => setOpen(false) }, void 0, false, {
+        fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+        lineNumber: 58,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "absolute left-1/2 top-full z-20 mt-2 max-h-64 w-40 -translate-x-1/2 overflow-y-auto rounded-2xl border border-line bg-card p-1.5 shadow-lift scroll-thin animate-pop-in", children: [
+        /* @__PURE__ */ jsxDEV(
+          "button",
+          {
+            "data-testid": `filter-opt-${label}-all`,
+            onClick: () => select(null),
+            className: `flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-left text-sm transition-colors ${value === null ? "bg-accent-soft/60 text-accent-deep" : "text-ink hover:bg-paper"}`,
+            children: [
+              "全部",
+              value === null && /* @__PURE__ */ jsxDEV(Check, { size: 13 }, void 0, false, {
+                fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+                lineNumber: 68,
+                columnNumber: 34
+              }, this)
+            ]
+          },
+          void 0,
+          true,
+          {
+            fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+            lineNumber: 60,
+            columnNumber: 13
+          },
+          this
+        ),
+        categories.map(
+          (c) => /* @__PURE__ */ jsxDEV(
+            "button",
+            {
+              "data-testid": `filter-opt-${label}-${c}`,
+              onClick: () => select(c),
+              className: `flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-left text-sm transition-colors ${value === c ? "bg-accent-soft/60 text-accent-deep" : "text-ink hover:bg-paper"}`,
+              children: [
+                c,
+                value === c && /* @__PURE__ */ jsxDEV(Check, { size: 13 }, void 0, false, {
+                  fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+                  lineNumber: 80,
+                  columnNumber: 33
+                }, this)
+              ]
+            },
+            c,
+            true,
+            {
+              fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+              lineNumber: 71,
+              columnNumber: 11
+            },
+            this
+          )
+        )
+      ] }, void 0, true, {
+        fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+        lineNumber: 59,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, true, {
+      fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+      lineNumber: 57,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+    lineNumber: 46,
+    columnNumber: 5
+  }, this);
+}
+_s(FilterPicker, "xG1TONbKtDWtdOTrXaTAsNhPg/Q=");
+_c = FilterPicker;
+function WordCard({
+  sideLabel,
+  side,
+  filter,
+  categories,
+  onFilterChange,
+  onRandom
+}) {
+  return /* @__PURE__ */ jsxDEV(
+    "div",
+    {
+      "data-testid": `word-${sideLabel}`,
+      className: "group relative flex flex-col items-center overflow-hidden rounded-3xl border border-line bg-card px-6 py-12 text-center shadow-soft transition-shadow hover:shadow-lift sm:py-14",
+      children: [
+        /* @__PURE__ */ jsxDEV("span", { className: "absolute left-4 top-4 text-[11px] tracking-[0.3em] text-muted/70", children: sideLabel }, void 0, false, {
+          fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+          lineNumber: 123,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ jsxDEV(
+          FilterPicker,
+          {
+            label: sideLabel,
+            value: filter,
+            categories,
+            onChange: (c) => onFilterChange(sideLabel, c)
+          },
+          void 0,
+          false,
+          {
+            fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+            lineNumber: 126,
+            columnNumber: 7
+          },
+          this
+        ),
+        /* @__PURE__ */ jsxDEV(
+          "div",
+          {
+            className: "mt-8 flex min-h-[4.2rem] items-center justify-center sm:min-h-[5rem]",
+            children: /* @__PURE__ */ jsxDEV("span", { className: "animate-word-swap font-display text-[3.2rem] leading-none text-ink sm:text-[4rem]", children: side?.word || "·" }, void 0, false, {
+              fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+              lineNumber: 136,
+              columnNumber: 9
+            }, this)
+          },
+          side?.word ?? "empty",
+          false,
+          {
+            fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+            lineNumber: 132,
+            columnNumber: 7
+          },
+          this
+        ),
+        /* @__PURE__ */ jsxDEV(
+          "span",
+          {
+            "data-testid": `word-cat-${sideLabel}`,
+            className: "mt-3 min-h-4 text-[11px] tracking-[0.35em] text-muted/70",
+            children: side?.category || ""
+          },
+          void 0,
+          false,
+          {
+            fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+            lineNumber: 140,
+            columnNumber: 7
+          },
+          this
+        ),
+        /* @__PURE__ */ jsxDEV(
+          "button",
+          {
+            onClick: onRandom,
+            "data-testid": `random-${sideLabel}`,
+            className: "mt-7 inline-flex items-center gap-1.5 rounded-full border border-line bg-white/60 px-4 py-2 text-xs text-muted transition-colors hover:border-accent/40 hover:text-accent",
+            title: "按所选分类重新随机这个词",
+            children: [
+              /* @__PURE__ */ jsxDEV(Shuffle, { size: 13 }, void 0, false, {
+                fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+                lineNumber: 152,
+                columnNumber: 9
+              }, this),
+              "随机"
+            ]
+          },
+          void 0,
+          true,
+          {
+            fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+            lineNumber: 146,
+            columnNumber: 7
+          },
+          this
+        )
+      ]
+    },
+    void 0,
+    true,
+    {
+      fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+      lineNumber: 119,
+      columnNumber: 5
+    },
+    this
+  );
+}
+_c2 = WordCard;
+export default function WordCards({
+  pair,
+  categories,
+  leftFilter,
+  rightFilter,
+  onFilterChange,
+  onRandomAll,
+  onRandomLeft,
+  onRandomRight,
+  onFavorite,
+  onStartWriting
+}) {
+  return /* @__PURE__ */ jsxDEV("div", { children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5", children: [
+      /* @__PURE__ */ jsxDEV(
+        WordCard,
+        {
+          sideLabel: "左",
+          side: pair?.left,
+          filter: leftFilter,
+          categories,
+          onFilterChange: (s, c) => onFilterChange("左", c),
+          onRandom: onRandomLeft
+        },
+        void 0,
+        false,
+        {
+          fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+          lineNumber: 175,
+          columnNumber: 9
+        },
+        this
+      ),
+      /* @__PURE__ */ jsxDEV(
+        WordCard,
+        {
+          sideLabel: "右",
+          side: pair?.right,
+          filter: rightFilter,
+          categories,
+          onFilterChange: (s, c) => onFilterChange("右", c),
+          onRandom: onRandomRight
+        },
+        void 0,
+        false,
+        {
+          fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+          lineNumber: 183,
+          columnNumber: 9
+        },
+        this
+      )
+    ] }, void 0, true, {
+      fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+      lineNumber: 174,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "mt-6 flex flex-wrap items-center justify-center gap-3 rounded-3xl border border-line bg-card/70 px-6 py-6 shadow-soft", children: [
+      /* @__PURE__ */ jsxDEV(
+        "button",
+        {
+          className: "btn bg-[#cba0a0] px-7 py-3 text-base text-[#6e3f3f] hover:bg-[#b88e8e]",
+          onClick: onRandomAll,
+          "data-testid": "random-all",
+          title: "两个词一起重新随机",
+          children: [
+            /* @__PURE__ */ jsxDEV(Shuffle, { size: 18 }, void 0, false, {
+              fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+              lineNumber: 201,
+              columnNumber: 11
+            }, this),
+            "重新随机"
+          ]
+        },
+        void 0,
+        true,
+        {
+          fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+          lineNumber: 195,
+          columnNumber: 9
+        },
+        this
+      ),
+      /* @__PURE__ */ jsxDEV(
+        "button",
+        {
+          className: "btn bg-[#e2e1dd] px-7 py-3 text-base text-[#555550] hover:bg-[#d6d5d0]",
+          onClick: onStartWriting,
+          "data-testid": "start-writing",
+          children: [
+            /* @__PURE__ */ jsxDEV(Feather, { size: 18 }, void 0, false, {
+              fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+              lineNumber: 209,
+              columnNumber: 11
+            }, this),
+            "开始写作"
+          ]
+        },
+        void 0,
+        true,
+        {
+          fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+          lineNumber: 204,
+          columnNumber: 9
+        },
+        this
+      ),
+      /* @__PURE__ */ jsxDEV(
+        "button",
+        {
+          className: "btn btn-soft px-4 py-3",
+          onClick: onFavorite,
+          "data-testid": "fav-btn",
+          disabled: !pair,
+          title: "收藏卡片上的两个词",
+          children: [
+            /* @__PURE__ */ jsxDEV(Heart, { size: 16 }, void 0, false, {
+              fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+              lineNumber: 219,
+              columnNumber: 11
+            }, this),
+            "收藏"
+          ]
+        },
+        void 0,
+        true,
+        {
+          fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+          lineNumber: 212,
+          columnNumber: 9
+        },
+        this
+      )
+    ] }, void 0, true, {
+      fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+      lineNumber: 194,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "E:/vibecoding/词雾/src/components/WordCards.tsx",
+    lineNumber: 172,
+    columnNumber: 5
+  }, this);
+}
+_c3 = WordCards;
+var _c, _c2, _c3;
+$RefreshReg$(_c, "FilterPicker");
+$RefreshReg$(_c2, "WordCard");
+$RefreshReg$(_c3, "WordCards");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("E:/vibecoding/词雾/src/components/WordCards.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("E:/vibecoding/词雾/src/components/WordCards.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,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QVU7QUFBQSxVQUNWLFNBQVNJO0FBQUFBLFVBQ1QsZUFBWTtBQUFBLFVBRVo7QUFBQSxtQ0FBQyxXQUFRLE1BQU0sTUFBZjtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUFrQjtBQUFBO0FBQUE7QUFBQTtBQUFBLFFBTHBCO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxNQU9BO0FBQUEsTUFDQTtBQUFBLFFBQUM7QUFBQTtBQUFBLFVBQ0MsV0FBVTtBQUFBLFVBQ1YsU0FBU0Q7QUFBQUEsVUFDVCxlQUFZO0FBQUEsVUFDWixVQUFVLENBQUNOO0FBQUFBLFVBQ1gsT0FBTTtBQUFBLFVBRU47QUFBQSxtQ0FBQyxTQUFNLE1BQU0sTUFBYjtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUFnQjtBQUFBO0FBQUE7QUFBQTtBQUFBLFFBUGxCO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxNQVNBO0FBQUEsU0EzQkY7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQTRCQTtBQUFBLE9BbERGO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0FtREE7QUFFSjtBQUFDVyxNQWxFdUJaO0FBQVMsSUFBQWEsSUFBQWQsS0FBQWE7QUFBQSxhQUFBQyxJQUFBO0FBQUEsYUFBQWQsS0FBQTtBQUFBLGFBQUFhLEtBQUEiLCJuYW1lcyI6WyJ1c2VTdGF0ZSIsIkNoZWNrIiwiQ2hldnJvbkRvd24iLCJGZWF0aGVyIiwiSGVhcnQiLCJTaHVmZmxlIiwiRmlsdGVyUGlja2VyIiwibGFiZWwiLCJ2YWx1ZSIsImNhdGVnb3JpZXMiLCJvbkNoYW5nZSIsIl9zIiwib3BlbiIsInNldE9wZW4iLCJzZWxlY3QiLCJjIiwidiIsIm1hcCIsIldvcmRDYXJkIiwic2lkZUxhYmVsIiwic2lkZSIsImZpbHRlciIsIm9uRmlsdGVyQ2hhbmdlIiwib25SYW5kb20iLCJ3b3JkIiwiY2F0ZWdvcnkiLCJfYzIiLCJXb3JkQ2FyZHMiLCJwYWlyIiwibGVmdEZpbHRlciIsInJpZ2h0RmlsdGVyIiwib25SYW5kb21BbGwiLCJvblJhbmRvbUxlZnQiLCJvblJhbmRvbVJpZ2h0Iiwib25GYXZvcml0ZSIsIm9uU3RhcnRXcml0aW5nIiwibGVmdCIsInMiLCJyaWdodCIsIl9jMyIsIl9jIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIldvcmRDYXJkcy50c3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlU3RhdGUgfSBmcm9tICdyZWFjdCdcbmltcG9ydCB7IENoZWNrLCBDaGV2cm9uRG93biwgRmVhdGhlciwgSGVhcnQsIFNodWZmbGUgfSBmcm9tICdsdWNpZGUtcmVhY3QnXG5cbmV4cG9ydCBpbnRlcmZhY2UgUGFpclNpZGUge1xuICB3b3JkOiBzdHJpbmdcbiAgY2F0ZWdvcnk6IHN0cmluZ1xufVxuZXhwb3J0IGludGVyZmFjZSBXb3JkUGFpciB7XG4gIGxlZnQ6IFBhaXJTaWRlXG4gIHJpZ2h0OiBQYWlyU2lkZVxufVxuXG5pbnRlcmZhY2UgRmlsdGVyUGlja2VyUHJvcHMge1xuICBsYWJlbDogJ+W3picgfCAn5Y+zJ1xuICB2YWx1ZTogc3RyaW5nIHwgbnVsbFxuICBjYXRlZ29yaWVzOiBzdHJpbmdbXVxuICBvbkNoYW5nZTogKGM6IHN0cmluZyB8IG51bGwpID0+IHZvaWRcbn1cblxuZnVuY3Rpb24gRmlsdGVyUGlja2VyKHsgbGFiZWwsIHZhbHVlLCBjYXRlZ29yaWVzLCBvbkNoYW5nZSB9OiBGaWx0ZXJQaWNrZXJQcm9wcykge1xuICBjb25zdCBbb3Blbiwgc2V0T3Blbl0gPSB1c2VTdGF0ZShmYWxzZSlcbiAgY29uc3Qgc2VsZWN0ID0gKGM6IHN0cmluZyB8IG51bGwpID0+IHtcbiAgICBvbkNoYW5nZShjKVxuICAgIHNldE9wZW4oZmFsc2UpXG4gIH1cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cInJlbGF0aXZlXCI+XG4gICAgICA8YnV0dG9uXG4gICAgICAgIGRhdGEtdGVzdGlkPXtgZmlsdGVyLSR7bGFiZWx9YH1cbiAgICAgICAgb25DbGljaz17KCkgPT4gc2V0T3BlbigodikgPT4gIXYpfVxuICAgICAgICBjbGFzc05hbWU9XCJpbmxpbmUtZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTEgcm91bmRlZC1mdWxsIGJvcmRlciBib3JkZXItbGluZS84MCBiZy13aGl0ZS81MCBweC0zIHB5LTEgdGV4dC14cyB0ZXh0LW11dGVkIHRyYW5zaXRpb24tY29sb3JzIGhvdmVyOmJvcmRlci1hY2NlbnQvNDAgaG92ZXI6dGV4dC1hY2NlbnRcIlxuICAgICAgICB0aXRsZT1cIumAieaLqeaKveWPluWIhuexu1wiXG4gICAgICA+XG4gICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInRyYWNraW5nLVswLjJlbV1cIj57dmFsdWUgPz8gJ+WFqOmDqCd9PC9zcGFuPlxuICAgICAgICA8Q2hldnJvbkRvd24gc2l6ZT17MTF9IC8+XG4gICAgICA8L2J1dHRvbj5cbiAgICAgIHtvcGVuICYmIChcbiAgICAgICAgPD5cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZpeGVkIGluc2V0LTAgei0xMFwiIG9uQ2xpY2s9eygpID0+IHNldE9wZW4oZmFsc2UpfSAvPlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYWJzb2x1dGUgbGVmdC0xLzIgdG9wLWZ1bGwgei0yMCBtdC0yIG1heC1oLTY0IHctNDAgLXRyYW5zbGF0ZS14LTEvMiBvdmVyZmxvdy15LWF1dG8gcm91bmRlZC0yeGwgYm9yZGVyIGJvcmRlci1saW5lIGJnLWNhcmQgcC0xLjUgc2hhZG93LWxpZnQgc2Nyb2xsLXRoaW4gYW5pbWF0ZS1wb3AtaW5cIj5cbiAgICAgICAgICAgIDxidXR0b25cbiAgICAgICAgICAgICAgZGF0YS10ZXN0aWQ9e2BmaWx0ZXItb3B0LSR7bGFiZWx9LWFsbGB9XG4gICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNlbGVjdChudWxsKX1cbiAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgZmxleCB3LWZ1bGwgaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiByb3VuZGVkLXhsIHB4LTMgcHktMS41IHRleHQtbGVmdCB0ZXh0LXNtIHRyYW5zaXRpb24tY29sb3JzICR7XG4gICAgICAgICAgICAgICAgdmFsdWUgPT09IG51bGwgPyAnYmctYWNjZW50LXNvZnQvNjAgdGV4dC1hY2NlbnQtZGVlcCcgOiAndGV4dC1pbmsgaG92ZXI6YmctcGFwZXInXG4gICAgICAgICAgICAgIH1gfVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICDlhajpg6hcbiAgICAgICAgICAgICAge3ZhbHVlID09PSBudWxsICYmIDxDaGVjayBzaXplPXsxM30gLz59XG4gICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICAgIHtjYXRlZ29yaWVzLm1hcCgoYykgPT4gKFxuICAgICAgICAgICAgICA8YnV0dG9uXG4gICAgICAgICAgICAgICAga2V5PXtjfVxuICAgICAgICAgICAgICAgIGRhdGEtdGVzdGlkPXtgZmlsdGVyLW9wdC0ke2xhYmVsfS0ke2N9YH1cbiAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZWxlY3QoYyl9XG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgZmxleCB3LWZ1bGwgaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiByb3VuZGVkLXhsIHB4LTMgcHktMS41IHRleHQtbGVmdCB0ZXh0LXNtIHRyYW5zaXRpb24tY29sb3JzICR7XG4gICAgICAgICAgICAgICAgICB2YWx1ZSA9PT0gYyA/ICdiZy1hY2NlbnQtc29mdC82MCB0ZXh0LWFjY2VudC1kZWVwJyA6ICd0ZXh0LWluayBob3ZlcjpiZy1wYXBlcidcbiAgICAgICAgICAgICAgICB9YH1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIHtjfVxuICAgICAgICAgICAgICAgIHt2YWx1ZSA9PT0gYyAmJiA8Q2hlY2sgc2l6ZT17MTN9IC8+fVxuICAgICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICAgICkpfVxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICA8Lz5cbiAgICAgICl9XG4gICAgPC9kaXY+XG4gIClcbn1cblxuaW50ZXJmYWNlIFByb3BzIHtcbiAgcGFpcjogV29yZFBhaXIgfCBudWxsXG4gIGNhdGVnb3JpZXM6IHN0cmluZ1tdXG4gIGxlZnRGaWx0ZXI6IHN0cmluZyB8IG51bGxcbiAgcmlnaHRGaWx0ZXI6IHN0cmluZyB8IG51bGxcbiAgb25GaWx0ZXJDaGFuZ2U6IChzaWRlOiAn5bemJyB8ICflj7MnLCBjYXQ6IHN0cmluZyB8IG51bGwpID0+IHZvaWRcbiAgb25SYW5kb21BbGw6ICgpID0+IHZvaWRcbiAgb25SYW5kb21MZWZ0OiAoKSA9PiB2b2lkXG4gIG9uUmFuZG9tUmlnaHQ6ICgpID0+IHZvaWRcbiAgb25GYXZvcml0ZTogKCkgPT4gdm9pZFxuICBvblN0YXJ0V3JpdGluZzogKCkgPT4gdm9pZFxufVxuXG5mdW5jdGlvbiBXb3JkQ2FyZCh7XG4gIHNpZGVMYWJlbCxcbiAgc2lkZSxcbiAgZmlsdGVyLFxuICBjYXRlZ29yaWVzLFxuICBvbkZpbHRlckNoYW5nZSxcbiAgb25SYW5kb20sXG59OiB7XG4gIHNpZGVMYWJlbDogJ+W3picgfCAn5Y+zJ1xuICBzaWRlOiBQYWlyU2lkZSB8IHVuZGVmaW5lZFxuICBmaWx0ZXI6IHN0cmluZyB8IG51bGxcbiAgY2F0ZWdvcmllczogc3RyaW5nW11cbiAgb25GaWx0ZXJDaGFuZ2U6IChzaWRlOiAn5bemJyB8ICflj7MnLCBjYXQ6IHN0cmluZyB8IG51bGwpID0+IHZvaWRcbiAgb25SYW5kb206ICgpID0+IHZvaWRcbn0pIHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2XG4gICAgICBkYXRhLXRlc3RpZD17YHdvcmQtJHtzaWRlTGFiZWx9YH1cbiAgICAgIGNsYXNzTmFtZT1cImdyb3VwIHJlbGF0aXZlIGZsZXggZmxleC1jb2wgaXRlbXMtY2VudGVyIG92ZXJmbG93LWhpZGRlbiByb3VuZGVkLTN4bCBib3JkZXIgYm9yZGVyLWxpbmUgYmctY2FyZCBweC02IHB5LTEyIHRleHQtY2VudGVyIHNoYWRvdy1zb2Z0IHRyYW5zaXRpb24tc2hhZG93IGhvdmVyOnNoYWRvdy1saWZ0IHNtOnB5LTE0XCJcbiAgICA+XG4gICAgICA8c3BhbiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBsZWZ0LTQgdG9wLTQgdGV4dC1bMTFweF0gdHJhY2tpbmctWzAuM2VtXSB0ZXh0LW11dGVkLzcwXCI+XG4gICAgICAgIHtzaWRlTGFiZWx9XG4gICAgICA8L3NwYW4+XG4gICAgICA8RmlsdGVyUGlja2VyXG4gICAgICAgIGxhYmVsPXtzaWRlTGFiZWx9XG4gICAgICAgIHZhbHVlPXtmaWx0ZXJ9XG4gICAgICAgIGNhdGVnb3JpZXM9e2NhdGVnb3JpZXN9XG4gICAgICAgIG9uQ2hhbmdlPXsoYykgPT4gb25GaWx0ZXJDaGFuZ2Uoc2lkZUxhYmVsLCBjKX1cbiAgICAgIC8+XG4gICAgICA8ZGl2XG4gICAgICAgIGtleT17c2lkZT8ud29yZCA/PyAnZW1wdHknfVxuICAgICAgICBjbGFzc05hbWU9XCJtdC04IGZsZXggbWluLWgtWzQuMnJlbV0gaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHNtOm1pbi1oLVs1cmVtXVwiXG4gICAgICA+XG4gICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImFuaW1hdGUtd29yZC1zd2FwIGZvbnQtZGlzcGxheSB0ZXh0LVszLjJyZW1dIGxlYWRpbmctbm9uZSB0ZXh0LWluayBzbTp0ZXh0LVs0cmVtXVwiPlxuICAgICAgICAgIHtzaWRlPy53b3JkIHx8ICfCtyd9XG4gICAgICAgIDwvc3Bhbj5cbiAgICAgIDwvZGl2PlxuICAgICAgPHNwYW5cbiAgICAgICAgZGF0YS10ZXN0aWQ9e2B3b3JkLWNhdC0ke3NpZGVMYWJlbH1gfVxuICAgICAgICBjbGFzc05hbWU9XCJtdC0zIG1pbi1oLTQgdGV4dC1bMTFweF0gdHJhY2tpbmctWzAuMzVlbV0gdGV4dC1tdXRlZC83MFwiXG4gICAgICA+XG4gICAgICAgIHtzaWRlPy5jYXRlZ29yeSB8fCAnJ31cbiAgICAgIDwvc3Bhbj5cbiAgICAgIDxidXR0b25cbiAgICAgICAgb25DbGljaz17b25SYW5kb219XG4gICAgICAgIGRhdGEtdGVzdGlkPXtgcmFuZG9tLSR7c2lkZUxhYmVsfWB9XG4gICAgICAgIGNsYXNzTmFtZT1cIm10LTcgaW5saW5lLWZsZXggaXRlbXMtY2VudGVyIGdhcC0xLjUgcm91bmRlZC1mdWxsIGJvcmRlciBib3JkZXItbGluZSBiZy13aGl0ZS82MCBweC00IHB5LTIgdGV4dC14cyB0ZXh0LW11dGVkIHRyYW5zaXRpb24tY29sb3JzIGhvdmVyOmJvcmRlci1hY2NlbnQvNDAgaG92ZXI6dGV4dC1hY2NlbnRcIlxuICAgICAgICB0aXRsZT1cIuaMieaJgOmAieWIhuexu+mHjeaWsOmaj+acuui/meS4quivjVwiXG4gICAgICA+XG4gICAgICAgIDxTaHVmZmxlIHNpemU9ezEzfSAvPlxuICAgICAgICDpmo/mnLpcbiAgICAgIDwvYnV0dG9uPlxuICAgIDwvZGl2PlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFdvcmRDYXJkcyh7XG4gIHBhaXIsXG4gIGNhdGVnb3JpZXMsXG4gIGxlZnRGaWx0ZXIsXG4gIHJpZ2h0RmlsdGVyLFxuICBvbkZpbHRlckNoYW5nZSxcbiAgb25SYW5kb21BbGwsXG4gIG9uUmFuZG9tTGVmdCxcbiAgb25SYW5kb21SaWdodCxcbiAgb25GYXZvcml0ZSxcbiAgb25TdGFydFdyaXRpbmcsXG59OiBQcm9wcykge1xuICByZXR1cm4gKFxuICAgIDxkaXY+XG4gICAgICB7Lyog5Y+M6K+N5Y2h54mH77ya6aG16Z2i5LiK5ZSv5LiA55qE6K+N5rGH5bGV56S65L2NICovfVxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJncmlkIGdyaWQtY29scy0xIGdhcC00IHNtOmdyaWQtY29scy0yIHNtOmdhcC01XCI+XG4gICAgICAgIDxXb3JkQ2FyZFxuICAgICAgICAgIHNpZGVMYWJlbD1cIuW3plwiXG4gICAgICAgICAgc2lkZT17cGFpcj8ubGVmdH1cbiAgICAgICAgICBmaWx0ZXI9e2xlZnRGaWx0ZXJ9XG4gICAgICAgICAgY2F0ZWdvcmllcz17Y2F0ZWdvcmllc31cbiAgICAgICAgICBvbkZpbHRlckNoYW5nZT17KHMsIGMpID0+IG9uRmlsdGVyQ2hhbmdlKCflt6YnLCBjKX1cbiAgICAgICAgICBvblJhbmRvbT17b25SYW5kb21MZWZ0fVxuICAgICAgICAvPlxuICAgICAgICA8V29yZENhcmRcbiAgICAgICAgICBzaWRlTGFiZWw9XCLlj7NcIlxuICAgICAgICAgIHNpZGU9e3BhaXI/LnJpZ2h0fVxuICAgICAgICAgIGZpbHRlcj17cmlnaHRGaWx0ZXJ9XG4gICAgICAgICAgY2F0ZWdvcmllcz17Y2F0ZWdvcmllc31cbiAgICAgICAgICBvbkZpbHRlckNoYW5nZT17KHMsIGMpID0+IG9uRmlsdGVyQ2hhbmdlKCflj7MnLCBjKX1cbiAgICAgICAgICBvblJhbmRvbT17b25SYW5kb21SaWdodH1cbiAgICAgICAgLz5cbiAgICAgIDwvZGl2PlxuXG4gICAgICB7Lyog5Li75pON5L2c77ya6YeN5paw6ZqP5py6IC8g5byA5aeL5YaZ5L2cIC8g5pS26JeP77yI5LiN5YaN6YeN5aSN5bGV56S66K+N57uE77yJICovfVxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJtdC02IGZsZXggZmxleC13cmFwIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBnYXAtMyByb3VuZGVkLTN4bCBib3JkZXIgYm9yZGVyLWxpbmUgYmctY2FyZC83MCBweC02IHB5LTYgc2hhZG93LXNvZnRcIj5cbiAgICAgICAgPGJ1dHRvblxuICAgICAgICAgIGNsYXNzTmFtZT1cImJ0biBiZy1bI2NiYTBhMF0gcHgtNyBweS0zIHRleHQtYmFzZSB0ZXh0LVsjNmUzZjNmXSBob3ZlcjpiZy1bI2I4OGU4ZV1cIlxuICAgICAgICAgIG9uQ2xpY2s9e29uUmFuZG9tQWxsfVxuICAgICAgICAgIGRhdGEtdGVzdGlkPVwicmFuZG9tLWFsbFwiXG4gICAgICAgICAgdGl0bGU9XCLkuKTkuKror43kuIDotbfph43mlrDpmo/mnLpcIlxuICAgICAgICA+XG4gICAgICAgICAgPFNodWZmbGUgc2l6ZT17MTh9IC8+XG4gICAgICAgICAg6YeN5paw6ZqP5py6XG4gICAgICAgIDwvYnV0dG9uPlxuICAgICAgICA8YnV0dG9uXG4gICAgICAgICAgY2xhc3NOYW1lPVwiYnRuIGJnLVsjZTJlMWRkXSBweC03IHB5LTMgdGV4dC1iYXNlIHRleHQtWyM1NTU1NTBdIGhvdmVyOmJnLVsjZDZkNWQwXVwiXG4gICAgICAgICAgb25DbGljaz17b25TdGFydFdyaXRpbmd9XG4gICAgICAgICAgZGF0YS10ZXN0aWQ9XCJzdGFydC13cml0aW5nXCJcbiAgICAgICAgPlxuICAgICAgICAgIDxGZWF0aGVyIHNpemU9ezE4fSAvPlxuICAgICAgICAgIOW8gOWni+WGmeS9nFxuICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgPGJ1dHRvblxuICAgICAgICAgIGNsYXNzTmFtZT1cImJ0biBidG4tc29mdCBweC00IHB5LTNcIlxuICAgICAgICAgIG9uQ2xpY2s9e29uRmF2b3JpdGV9XG4gICAgICAgICAgZGF0YS10ZXN0aWQ9XCJmYXYtYnRuXCJcbiAgICAgICAgICBkaXNhYmxlZD17IXBhaXJ9XG4gICAgICAgICAgdGl0bGU9XCLmlLbol4/ljaHniYfkuIrnmoTkuKTkuKror41cIlxuICAgICAgICA+XG4gICAgICAgICAgPEhlYXJ0IHNpemU9ezE2fSAvPlxuICAgICAgICAgIOaUtuiXj1xuICAgICAgICA8L2J1dHRvbj5cbiAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuICApXG59XG4iXSwiZmlsZSI6IkU6L3ZpYmVjb2Rpbmcv6K+N6Zu+L3NyYy9jb21wb25lbnRzL1dvcmRDYXJkcy50c3gifQ==
