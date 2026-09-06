@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-paper text-ink font-body;
+  }
+  ::selection {
+    background: rgba(60, 60, 56, 0.15);
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: default;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium select-none transition-all duration-150 disabled:opacity-40 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent-deep active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply border border-line bg-card text-ink hover:border-accent/40 hover:text-accent;
+  }
+  .btn-soft {
+    @apply text-muted hover:text-ink hover:bg-card;
+  }
+  .btn-danger {
+    @apply bg-accent text-white hover:bg-accent-deep;
+  }
+  .nav-link {
+    @apply rounded-full px-3.5 py-1.5 text-sm text-muted transition-colors hover:text-ink hover:bg-card;
+  }
+  .nav-link.active {
+    @apply bg-card text-ink shadow-soft;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 whitespace-nowrap rounded-full border border-line bg-white/70 px-3 py-1 text-sm text-ink;
+  }
+  .field {
+    @apply w-full rounded-xl border border-line bg-white/70 px-3.5 py-2 text-sm text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-accent/50;
+  }
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #c8c6c0 transparent;
+  }
+  .scroll-thin::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  .scroll-thin::-webkit-scrollbar-thumb {
+    background: #c8c6c0;
+    border-radius: 999px;
+  }
+  .scroll-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+.section-label {
+  @apply text-[11px] uppercase tracking-[0.3em] text-muted;
+}
