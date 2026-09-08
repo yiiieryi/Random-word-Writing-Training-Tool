@@ -132,6 +132,7 @@ export default function Landing() {
     const particles: Particle[] = []
     const mouse = { x: -9999, y: -9999, px: -9999, py: -9999 }
     const trail: { x: number; y: number; a: number }[] = []
+    let touchMode = false
     let hovered: Particle | null = null
     let hoverKey = ''
     let lastMoveTime = -999999
@@ -313,23 +314,30 @@ export default function Landing() {
           tip.append(t1, t2)
         }
         tip.style.opacity = '1'
-        tip.style.transform = `translate(${mouse.x + 16}px, ${mouse.y + 16}px)`
+        const tx = touchMode
+          ? Math.max(8, Math.min(mouse.x - 120, window.innerWidth - 240))
+          : mouse.x + 16
+        const ty = touchMode ? Math.max(8, mouse.y - 76) : mouse.y + 16
+        tip.style.transform = `translate(${tx}px, ${ty}px)`
       }
     }
 
-    const onMove = (e: MouseEvent) => {
+    /** 鼠标/手指统一移动逻辑：更新位置、拖尾、悬停粒子 */
+    const moveTo = (x: number, y: number, withTrail: boolean) => {
       mouse.px = mouse.x
       mouse.py = mouse.y
-      mouse.x = e.clientX
-      mouse.y = e.clientY
+      mouse.x = x
+      mouse.y = y
       lastMoveTime = performance.now()
-      trail.push({ x: mouse.x, y: mouse.y, a: 0.4 })
-      if (trail.length > 24) trail.shift()
+      if (withTrail) {
+        trail.push({ x, y, a: 0.4 })
+        if (trail.length > 24) trail.shift()
+      }
 
       let best: Particle | null = null
       let bestD = Infinity
       for (const p of particles) {
-        const dd = Math.hypot(p.x - mouse.x, p.y - mouse.y)
+        const dd = Math.hypot(p.x - x, p.y - y)
         const thr = Math.max(p.size * 0.72, 26)
         if (dd < thr && dd < bestD) {
           best = p
@@ -337,14 +345,33 @@ export default function Landing() {
         }
       }
       if (hovered) {
-        const dd = Math.hypot(hovered.x - mouse.x, hovered.y - mouse.y)
+        const dd = Math.hypot(hovered.x - x, hovered.y - y)
         const keepThr = Math.max(hovered.size * 1.4, 48)
         if (dd < keepThr) best = hovered
       }
       hovered = best
       updateTooltip()
     }
+
+    const onMove = (e: MouseEvent) => {
+      touchMode = false
+      moveTo(e.clientX, e.clientY, true)
+    }
+    const onTouchStart = (e: TouchEvent) => {
+      const t = e.touches[0]
+      if (!t) return
+      touchMode = true
+      moveTo(t.clientX, t.clientY, false)
+    }
+    const onTouchMove = (e: TouchEvent) => {
+      const t = e.touches[0]
+      if (!t) return
+      touchMode = true
+      moveTo(t.clientX, t.clientY, true)
+    }
     window.addEventListener('mousemove', onMove)
+    window.addEventListener('touchstart', onTouchStart, { passive: true })
+    window.addEventListener('touchmove', onTouchMove, { passive: true })
 
     /**
      * 点击逻辑：
@@ -380,6 +407,8 @@ export default function Landing() {
       cancelAnimationFrame(raf)
       window.removeEventListener('resize', resize)
       window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('touchstart', onTouchStart)
+      window.removeEventListener('touchmove', onTouchMove)
       canvas.removeEventListener('click', onClick)
       refreshRef.current = null
     }
@@ -393,8 +422,8 @@ export default function Landing() {
       <canvas
         ref={canvasRef}
         data-testid="mist-canvas"
-        className="absolute inset-0 cursor-default"
-        aria-label="词雾首页：移动鼠标拨动词雾，点击文字直接选定进入写作区，点击空白区进入写作区自动抽词"
+        className="absolute inset-0 cursor-default touch-none"
+        aria-label="词雾首页：移动鼠标或手指拨动词雾，点击文字直接选定进入写作区，点击空白区进入写作区自动抽词"
       />
       <div
         className="pointer-events-none absolute inset-0"
