@@ -3,3 +3,10 @@ dist
 dist-ssr
 *.local
 .DS_Store
+
+# 本地运行与验证产物（仅本地保留，不推送）
+启动词雾.bat
+存档说明.md
+配色总览.html
+screenshots/
+.test-profile/
