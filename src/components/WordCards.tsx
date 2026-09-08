@@ -99,9 +99,9 @@ function WordCard({
   return (
     <div
       data-testid={`word-${sideLabel}`}
-      className="group relative flex flex-col items-center overflow-hidden rounded-3xl border border-line bg-card px-6 py-12 text-center shadow-soft transition-shadow hover:shadow-lift sm:py-14"
+      className="group relative flex flex-col items-center overflow-hidden rounded-3xl border border-line bg-card px-2 py-8 text-center shadow-soft transition-shadow hover:shadow-lift sm:px-6 sm:py-14"
     >
-      <span className="absolute left-4 top-4 text-[11px] tracking-[0.3em] text-muted/70">
+      <span className="absolute left-2.5 top-2.5 text-[10px] tracking-[0.3em] text-muted/70 sm:left-4 sm:top-4 sm:text-[11px]">
         {sideLabel}
       </span>
       <FilterPicker
@@ -112,22 +112,22 @@ function WordCard({
       />
       <div
         key={side?.word ?? 'empty'}
-        className="mt-8 flex min-h-[4.2rem] items-center justify-center sm:min-h-[5rem]"
+        className="mt-6 flex min-h-[3.8rem] w-full items-center justify-center px-1 sm:mt-8 sm:min-h-[5rem]"
       >
-        <span className="animate-word-swap font-display text-[3.2rem] leading-none text-ink sm:text-[4rem]">
+        <span className="animate-word-swap max-w-full break-words font-display text-[1.8rem] leading-[1.2] text-ink sm:text-[4rem] sm:leading-none">
           {side?.word || '·'}
         </span>
       </div>
       <span
         data-testid={`word-cat-${sideLabel}`}
-        className="mt-3 min-h-4 text-[11px] tracking-[0.35em] text-muted/70"
+        className="mt-2.5 min-h-4 max-w-full truncate px-1 text-[10px] tracking-[0.2em] text-muted/70 sm:mt-3 sm:text-[11px] sm:tracking-[0.35em]"
       >
         {side?.category || ''}
       </span>
       <button
         onClick={onRandom}
         data-testid={`random-${sideLabel}`}
-        className="mt-7 inline-flex items-center gap-1.5 rounded-full border border-line bg-white/60 px-4 py-2 text-xs text-muted transition-colors hover:border-accent/40 hover:text-accent"
+        className="mt-5 inline-flex items-center gap-1 rounded-full border border-line bg-white/60 px-2.5 py-1.5 text-[11px] text-muted transition-colors hover:border-accent/40 hover:text-accent sm:mt-7 sm:px-4 sm:py-2 sm:text-xs"
         title="按所选分类重新随机这个词"
       >
         <Shuffle size={13} />
@@ -152,7 +152,7 @@ export default function WordCards({
   return (
     <div>
       {/* 双词卡片：页面上唯一的词汇展示位 */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+      <div className="grid grid-cols-2 gap-3 sm:gap-5">
         <WordCard
           sideLabel="左"
           side={pair?.left}
