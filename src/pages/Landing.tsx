@@ -275,7 +275,7 @@ export default function Landing() {
         ctx.save()
         ctx.translate(p.x, p.y)
         ctx.rotate(p.rotate)
-        ctx.font = `${p.size}px "Songti SC","STSong","SimSun","Georgia",serif`
+        ctx.font = `${p.size}px "Songti SC","STSong","SimSun","Noto Serif SC","Noto Serif CJK SC","Source Han Serif SC","AR PL UMing CN","Georgia",serif`
         ctx.textAlign = 'center'
         ctx.textBaseline = 'middle'
         const brightness = p.meta

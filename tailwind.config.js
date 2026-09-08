@@ -18,7 +18,7 @@ export default {
       },
       fontFamily: {
         body: ['"Microsoft YaHei"', '"PingFang SC"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
-        display: ['"Songti SC"', '"STSong"', '"SimSun"', 'Georgia', '"Times New Roman"', 'serif'],
+        display: ['"Songti SC"', '"STSong"', '"SimSun"', '"Noto Serif SC"', '"Noto Serif CJK SC"', '"Source Han Serif SC"', '"AR PL UMing CN"', 'Georgia', '"Times New Roman"', 'serif'],
       },
       boxShadow: {
         soft: '0 1px 2px rgba(43,38,32,0.04), 0 10px 26px -14px rgba(43,38,32,0.16)',
