@@ -703,12 +703,12 @@ export default function WordLibrary() {
 
       {/* 批量导入面板：文本粘贴 + 文件 */}
       {showImport && (
-        <div className="fixed inset-0 z-[55] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[55] flex items-start justify-center overflow-y-auto p-4 pt-[6vh] sm:items-center sm:pt-4">
           <div
-            className="animate-fade-in absolute inset-0 bg-ink/25 backdrop-blur-[1px]"
+            className="animate-fade-in fixed inset-0 bg-ink/25"
             onClick={() => setShowImport(false)}
           />
-          <div className="animate-pop-in relative max-h-[86vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-line bg-card p-6 shadow-lift scroll-thin">
+          <div className="animate-pop-in relative max-h-[86vh] w-full max-w-lg overflow-y-auto overscroll-contain rounded-2xl border border-line bg-card p-6 shadow-lift scroll-thin">
             <div className="flex items-center justify-between">
               <h3 className="font-display text-xl text-ink">批量导入词库</h3>
               <button className="btn btn-soft p-2" onClick={() => setShowImport(false)}>
@@ -724,7 +724,7 @@ export default function WordLibrary() {
               value={importText}
               onChange={(e) => setImportText(e.target.value)}
               placeholder={'粘贴 JSON 或 CSV 文本…\n\nJSON：{"分类":["词1","词2"]}\nCSV：分类,词汇'}
-              className="field mt-4 h-44 resize-none font-mono text-xs leading-relaxed"
+              className="field mt-4 h-44 resize-none scroll-mt-4 font-mono text-xs leading-relaxed"
               spellCheck={false}
             />
 
